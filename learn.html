@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Language Detection </title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>LEARN AND PRACTICE WORDS</h1>
+    </header>
+    <div class="container">
+        <button class="sidebar-button">&#9776;</button>
+        <div class="sidebar">
+            <button class="close-button">&times;</button>
+            <br>
+            <br>
+            <br>
+
+            <div class="dropdown-buttons"></div>
+        </div>
+        <div class="selected-button"></div>
+        <!-- learn -->
+        <div id="learn-container"></div>
+
+        <div class="video-container">
+            <video id="video-player"></video>
+            <button class="close-video-button">&times;</button>
+        </div>
+        <!-- <video id="video-player" controls>
+            <source src="" type="video/mp4">
+          </video> -->
+
+        <!-- <div class="video-container">
+            <iframe class="video" src="" frameborder="0" allowfullscreen></iframe>
+        </div> -->
+
+        <!-- practice -->
+        <div class="recording-container">
+            <!-- Video and timer section - initially hidden -->
+            <video muted id="video" class="recorder" autoplay></video>
+            <!-- Timer -->
+
+            <div id="timer">0 sec.</div>
+            <p>Click the recording button to start</p>
+            <button id="startBtn">Start Recording</button>
+        </div>
+        <br>
+        <br>
+        <!-- Video Preview -->
+        <div class="preview-container">
+            <video id="preview"></video>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
