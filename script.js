@@ -2,6 +2,7 @@ const sidebarButton = document.querySelector('.sidebar-button');
 const sidebar = document.querySelector('.sidebar');
 const closeButton = document.querySelector('.close-button');
 const videoContainer = document.querySelector('.recording-container');
+const previewContainer = document.querySelector('.preview-container')
 
 sidebarButton.addEventListener('click', () => {
   sidebar.classList.toggle('open');
@@ -64,11 +65,13 @@ fetch('words.json')
             learnContainer.textContent = 'Learn'; // Set Learn text
             learnContainer.style.display = 'block'; // Show Learn text
             videoContainer.style.display = 'none';
+            previewContainer.style.display = 'none';
           });
 
           //Event listener for practice button
           practiceButton.addEventListener('click', () => {
             videoContainer.style.display = 'block';
+            previewContainer.style.display = 'block';
             const script = document.createElement('script');
             script.src = 'practice.js';
             document.body.appendChild(script);

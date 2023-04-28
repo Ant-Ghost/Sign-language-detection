@@ -224,6 +224,10 @@ body {
 .preview-container{
     margin-left: 350px;
 }
+
+.no-pointer-events{
+    pointer-events: none;
+}
 /* 
 #preview {
     width: 100%;
