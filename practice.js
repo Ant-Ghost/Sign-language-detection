@@ -1,6 +1,8 @@
 let mediaRecorder = null;
 let videoTrack = null;
 let recorder = null;
+let videoBlob = null;
+let backend = ``;
 
 const TurnOnCamera = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -108,7 +110,7 @@ const StartRecording = async () => {
         console.log("Stopped!!! Saving video.")
 
         // Aggregating the chunks (array of blobs or binary objects) to create one binary object
-        const videoBlob = new Blob(chunk, { type: "video/mp4" });
+        videoBlob = new Blob(chunk, { type: "video/mp4" });
         const videoUrl = URL.createObjectURL(videoBlob);
 
         // Storing the video locally
@@ -117,6 +119,31 @@ const StartRecording = async () => {
         AddPreviewVideo(videoUrl);
 
         body.classList.remove("no-pointer-events");
+    }
+}
+
+const SubmitVideo = async () => {
+    try{
+        if(!videoBlob){
+            alert("Video Not Found!!!!");
+            return;
+        }
+        const form = new FormData();
+        form.append("file", videoBlob, "newProject.mp4");
+        const response = await axios.port(
+            `${backend}/file/upload`,
+            form,
+        )
+        if(response.status < 300){
+            const answer = document.getElementById("answer");
+            answer.innerText = response.data;
+        } else {
+            alert("Internal Error!!!");
+            return;
+        }
+    }catch(err){
+        alert("An error occured!!!");
+        console.log(err);
     }
 }
 
