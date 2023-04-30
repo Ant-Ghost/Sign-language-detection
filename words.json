@@ -1,35 +1,75 @@
 {
-    "TV": 0,
-    "after": 1,
-    "airplane": 2,
-    "all": 3,
-    "alligator": 4,
-    "animal": 5,
-    "another": 6,
-    "any": 7,
-    "apple": 8,
+    "TV": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/XH8-L7NjeNY' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "after": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/AZqgw-USe2I' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "airplane": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/eD5BTz7lR-o' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "all": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/BEfH2a6OfRA' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "alligator": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/fe8_PKtzrvU' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "animal": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/IyMuDawJZu0' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "another": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/0xPUmWMZeV8' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "any": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/jI-T63VNnNg' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "apple": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/3wIiujOP6Ag' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "arm": 9,
     "aunt": 10,
     "awake": 11,
     "backyard": 12,
-    "bad": 13,
+    "bad": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/prwtXZ1o2As' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "balloon": 14,
-    "bath": 15,
-    "because": 16,
-    "bed": 17,
-    "bedroom": 18,
-    "bee": 19,
+    "bath": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/r8wxFtDjU5Y' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "because": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/dsDg6ECkIwk' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "bed": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/12eeoE4uG_k' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "bedroom": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/83WlTF0pTAE' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "bee": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/S713PTJEjV0' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "before": 20,
     "beside": 21,
     "better": 22,
-    "bird": 23,
-    "black": 24,
+    "bird": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/1ZEAGpAH284' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "black": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/O5_4x8p5t4U' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "blow": 25,
     "blue": 26,
-    "boat": 27,
+    "boat": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/aDt-KNA-v04' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "book": 28,
-    "boy": 29,
-    "brother": 30,
+    "boy": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/E-wBrs3PJhU' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "brother": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/G0fzmn3pQng' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "brown": 31,
     "bug": 32,
     "bye": 33,

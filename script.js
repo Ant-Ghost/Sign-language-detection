@@ -66,6 +66,10 @@ fetch('words.json')
             learnContainer.style.display = 'block'; // Show Learn text
             videoContainer.style.display = 'none';
             previewContainer.style.display = 'none';
+
+            // Get the video URL for the selected word
+            const wordVideo = data[name].videoEmbedCode;
+            learnContainer.innerHTML = wordVideo;
           });
 
           //Event listener for practice button
@@ -82,3 +86,4 @@ fetch('words.json')
       dropdownButtonsContainer.appendChild(dropdownButton);
     });
   });
+
