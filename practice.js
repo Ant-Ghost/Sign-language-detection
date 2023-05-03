@@ -55,49 +55,55 @@ const RemovePreviewVideo = () => {
 }
 
 const StartRecording = async () => {
+    
     if(!mediaRecorder || !videoTrack || !recorder){
         alert("Please Grant Permission for Camera!!!");
         await TurnOnCamera();
         return ;
     }
-
-    const body = document.getElementById("main-body");
-    body.classList.add("no-pointer-events");
-
-    // RemovePreviewVideo();
-
-    // const recordingContainer=document.querySelector("recording-container");
-
-    const startButton = document.getElementById("startBtn");
+    
     let chunk = [];
 
+    const body = document.getElementById("main-body");
 
+    let waitTimer = document.getElementById("waitTimer");
+    let waitTime = 3;
+    const waitIntervalTimer = setInterval(()=>{
+        waitTimer.innerText = `Recording starts in ${waitTime--} sec`;
+    },1000);
+    
+    setTimeout(()=>{
 
-    // Starting the recording when button is clicked.
-    console.log("Recording Started!!!")
-    mediaRecorder.start();
-    recorder.style.background = "red";
-    recorder.style.color = "black";
+        clearInterval(waitIntervalTimer);
+        waitTimer.innerText = "";
+        waitTime = 3;
 
-    // adding timer
-    let sec = 1;
-    const intervalTimer = setInterval(() => {
+        body.classList.add("no-pointer-events");
+    
+        // Starting the recording when button is clicked.
+        console.log("Recording Started!!!")
+        mediaRecorder.start();
+        recorder.style.background = "red";
+        recorder.style.color = "black";
+    
+        // adding timer
+        let sec = 1;
         const timer = document.getElementById("timer");
-        timer.innerHTML = `${sec++} sec.`;
-    }, 1000)
+        const intervalTimer = setInterval(() => {
+            timer.innerHTML = `${sec++} sec.`;
+        }, 1000)
+    
+        // To stop the recording after 10 sec.
+        setTimeout(() => {
+            console.log("Recording Stopped!!!")
+            mediaRecorder.stop();
+            recorder.style.background = "";
+            recorder.style.color = "";
+            clearInterval(intervalTimer);
+            timer.innerHTML = `0 sec.`;
+        }, 8000)
+    }, 4000);
 
-    // To stop the recording after 10 sec.
-    setTimeout(() => {
-        console.log("Recording Stopped!!!")
-        mediaRecorder.stop();
-        // videoTrack.stop();
-        // videoTrack = null;
-        // recorder.srcObject = null;
-        recorder.style.background = "";
-        recorder.style.color = "";
-        clearInterval(intervalTimer);
-        timer.innerHTML = `0 sec.`;
-    }, 11000)
 
     // Assembling the data chunk by chunk.
     mediaRecorder.ondataavailable = (e) => {
@@ -130,13 +136,13 @@ const SubmitVideo = async () => {
         }
         const form = new FormData();
         form.append("file", videoBlob, "newProject.mp4");
-        const response = await axios.port(
+        const response = await axios.post(
             `${backend}/file/upload`,
             form,
         )
         if(response.status < 300){
             const answer = document.getElementById("answer");
-            answer.innerText = response.data;
+            answer.innerText = response.data.result;
         } else {
             alert("Internal Error!!!");
             return;
