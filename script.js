@@ -20,6 +20,9 @@ fetch('words.json')
     const dropdownButtonsContainer = document.querySelector('.dropdown-buttons');
     const selectedButton = document.querySelector('.selected-button');
 
+    let activeButton = null;
+    //let currentWord = null;
+
     const learnContainer = document.createElement('div');
     learnContainer.classList.add('learn-container');
     document.body.appendChild(learnContainer);
@@ -30,6 +33,10 @@ fetch('words.json')
       dropdownButton.textContent = name;
 
       dropdownButton.addEventListener('click', () => {
+        // Check if a different dropdown button was clicked
+        // if (name !== currentWord) {
+        //   currentWord = name; // update currently selected word
+
         const subButtons = dropdownButton.nextElementSibling;
         if (subButtons && subButtons.classList.contains('sub-buttons')) {
           subButtons.remove();
@@ -43,7 +50,10 @@ fetch('words.json')
           if (practiceContainer) {
             practiceContainer.remove();
           }
-          return;
+          // return;
+          if (activeButton === dropdownButton) {
+            activeButton = null;
+          }
         } else {
           const subButtons = document.createElement('div');
           subButtons.classList.add('sub-buttons');
@@ -81,6 +91,17 @@ fetch('words.json')
             document.body.appendChild(script);
             learnContainer.style.display = 'none'; // Hide Learn text
           });
+          if (activeButton && activeButton !== dropdownButton) {
+            // If there is an active dropdown button and it's not the current one, close it
+            const activeSubButtons = activeButton.nextElementSibling;
+            activeSubButtons.remove();
+            activeButton.classList.remove('active');
+            if (learnContainer) {
+              learnContainer.remove();
+            }
+          }
+
+          activeButton = dropdownButton;
         }
       });
       dropdownButtonsContainer.appendChild(dropdownButton);

@@ -9,7 +9,7 @@
 .box {
     width: 40em;
     height: 30em;
-    background-color: #81affa;
+    background-color: rgb(225, 42, 85);
     border: 1px solid #000;
     display: flex;
     flex-direction: column;
@@ -19,15 +19,59 @@
 
 .box button {
     margin: 20px;
-    padding: 20px 50px;
-    background-color: #f96262;
+    padding: 50px 80px;
+    background-color: #0704ba;
     border: 1px solid #000716;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     color: white;
 }
 
+nav {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0704ba;
+    color: white;
+    padding: 0.5rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+}
+
+.navbar-title {
+    font-size: 30px;
+    color: #fff;
+    margin: 0;
+    /* padding: 10px 15px; */
+}
+
+.navbar-icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+
 /* LEARN -sidebar */
+.navbar {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0704ba;
+    color: white;
+    padding: 2rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -36,9 +80,12 @@
 
 h1 {
     text-align: center;
+    color: #fff;
 }
 
 body {
+    background-image: url('bg_img.png');
+    background-size: cover;
     font-family: Arial, sans-serif;
 }
 
@@ -85,6 +132,7 @@ body {
     font-size: 30px;
     cursor: pointer;
     z-index: 9999;
+    color: #f7f7f7;
 }
 
 .close-button {
@@ -135,8 +183,8 @@ body {
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
+    background-color: #e7e7f7;
+    color: #020000;
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 20px;
@@ -177,7 +225,7 @@ body {
 /* learn */
 
 .learn-container {
-    display: none;
+    color: #f7f7f7;
     margin-top: 100px;
     margin-left: 520px;
     font-size: 30px;
@@ -219,15 +267,17 @@ body {
     margin-left: 500px;
     font-size: 30px;
     margin-top: 300px;
+    color: #e7e7f7;
 }
 
-.preview-container{
+.preview-container {
     margin-left: 350px;
 }
 
-.no-pointer-events{
+.no-pointer-events {
     pointer-events: none;
 }
+
 /* 
 #preview {
     width: 100%;

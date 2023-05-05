@@ -74,22 +74,38 @@
     "bug": 32,
     "bye": 33,
     "callonphone": 34,
-    "can": 35,
-    "car": 36,
+    "can": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/TDN9SnM7xgQ' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "car": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/YfwGL0ZIBqE' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "carrot": 37,
-    "cat": 38,
-    "cereal": 39,
-    "chair": 40,
+    "cat":  {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/a3b8LAX68Ho' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "cereal": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/4uO8sY4hNYs' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    "chair": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/xNrwgoCz9SU' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "cheek": 41,
-    "child": 42,
+    "child": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/32hgy9NSs7k' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "chin": 43,
-    "chocolate": 44,
+    "chocolate": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/pxyi6YW8gOE' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "clean": 45,
     "close": 46,
     "closet": 47,
     "cloud": 48,
     "clown": 49,
-    "cow": 50,
+    "cow": {
+        "videoEmbedCode": "<iframe width='800' height='450' src='https://www.youtube.com/embed/I2_nB2cXP58' frameborder='0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
     "cowboy": 51,
     "cry": 52,
     "cut": 53,
