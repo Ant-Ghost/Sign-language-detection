@@ -7,6 +7,7 @@
         <h1 class="navbar-title">Learn Sign Language</h1>
     </nav>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -39,10 +40,14 @@
             <!-- Video and timer section - initially hidden -->
             <video muted id="video" class="recorder" autoplay></video>
             <!-- Timer -->
-
+            <div id="waitTimer"></div>
             <div id="timer">0 sec.</div>
             <p>Click the recording button to start</p>
             <button id="startBtn" onclick="StartRecording()">Start Recording</button>
+            <button id="submit" onclick="SubmitVideo()">Submit Video</button>
+            <div>
+                Answer: <span id="answer"></span>
+            </div>
         </div>
         <br>
         <br>
