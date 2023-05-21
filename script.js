@@ -89,6 +89,9 @@ fetch('words.json')
             const script = document.createElement('script');
             script.src = 'practice.js';
             document.body.appendChild(script);
+            const holisticScript = document.createElement('script');
+            holisticScript.src = 'holistic.js';
+            document.body.appendChild(holisticScript);
             learnContainer.style.display = 'none'; // Hide Learn text
           });
           if (activeButton && activeButton !== dropdownButton) {

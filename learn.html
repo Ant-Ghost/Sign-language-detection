@@ -3,9 +3,16 @@
 
 <head>
     <title>Sign Language Detection </title>
-    <nav class="navbar">
+    <nav class="navbar" style="position: sticky;">
         <h1 class="navbar-title">Learn Sign Language</h1>
     </nav>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="demo.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.1/holistic.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -36,26 +43,62 @@
         </div>
 
         <!-- practice -->
-        <div class="recording-container">
+        <div class="recording-container" >
             <!-- Video and timer section - initially hidden -->
-            <video muted id="video" class="recorder" autoplay></video>
+            <video muted id="video" class="recorder" autoplay hidden></video>
+            <div class="preview-container" style="margin-left: 23%;">
+                <video id="preview"></video>
+            </div>
             <!-- Timer -->
             <div id="waitTimer"></div>
             <div id="timer">0 sec.</div>
             <p>Click the recording button to start</p>
-            <button id="startBtn" onclick="StartRecording()">Start Recording</button>
-            <button id="submit" onclick="SubmitVideo()">Submit Video</button>
-            <div>
-                Answer: <span id="answer"></span>
+            <button id="startBtn" class="buttonload" onclick="StartRecording()">Start Recording</button>
+            <button id="submit" class="buttonload" onclick="SubmitVideo()">Submit Video</button>
+            <div id="answer" style="margin-top: 20px;">
             </div>
+            <div class="container" style="margin-top: 20px;" hidden>
+
+                <div class="float-container">
+                  
+                  <!-- WEBCAM INPUT -->
+                  <div class="float-child" style="margin-right: 30px;">
+                    <article class="panel is-info">
+                      <p class="panel-heading">
+                        Webcam Input
+                      </p>
+                      <div class="panel-block">
+                        <video class="input_video4" id="webcam-recorder" style="padding: 5px;"></video>
+                      </div>
+                    </article>
+                  </div>
+            
+                  <!-- MEDIAPIPE OUTPUT -->
+                  <div class="float-child" style="margin-left: 30px;">
+                    <article class="panel is-info">
+                        <p class="panel-heading">
+                          Mediapipe Face, Hands & Pose Detection
+                        </p>
+                        <div class="panel-block">
+                          <canvas class="output4" width="480px" height="480px"></canvas>
+                        </div>
+                    </article>
+                  </div>
+                </div>
+                
+                <div class="loading">
+                  <div class="spinner"></div>
+                </div>
+                <div style="visibility: hidden" class="control4"></div>
+            </div>
+            
         </div>
         <br>
         <br>
         <!-- Video Preview -->
-        <div class="preview-container">
-            <video id="preview"></video>
-        </div>
+        
     </div>
+    <script type="text/javascript" src="holistic.js"></script>
     <script src="script.js"></script>
 </body>
 

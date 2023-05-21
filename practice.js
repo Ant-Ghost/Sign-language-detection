@@ -2,7 +2,8 @@ let mediaRecorder = null;
 let videoTrack = null;
 let recorder = null;
 let videoBlob = null;
-let backend = ``;
+let holisticRecorder = document.getElementById("webcam-recorder");
+let backend = `http://127.0.0.1:8000`;
 
 const TurnOnCamera = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -65,6 +66,7 @@ const StartRecording = async () => {
     let chunk = [];
 
     const body = document.getElementById("main-body");
+    const startButton = document.getElementById("startBtn");
 
     let waitTimer = document.getElementById("waitTimer");
     let waitTime = 3;
@@ -78,13 +80,14 @@ const StartRecording = async () => {
         waitTimer.innerText = "";
         waitTime = 3;
 
+        startButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>'
         body.classList.add("no-pointer-events");
     
         // Starting the recording when button is clicked.
         console.log("Recording Started!!!")
         mediaRecorder.start();
-        recorder.style.background = "red";
-        recorder.style.color = "black";
+        holisticRecorder.style.background = "red";
+        holisticRecorder.style.color = "black";
     
         // adding timer
         let sec = 1;
@@ -97,8 +100,8 @@ const StartRecording = async () => {
         setTimeout(() => {
             console.log("Recording Stopped!!!")
             mediaRecorder.stop();
-            recorder.style.background = "";
-            recorder.style.color = "";
+            holisticRecorder.style.background = "";
+            holisticRecorder.style.color = "";
             clearInterval(intervalTimer);
             timer.innerHTML = `0 sec.`;
         }, 8000)
@@ -124,11 +127,18 @@ const StartRecording = async () => {
 
         AddPreviewVideo(videoUrl);
 
+        startButton.innerHTML = "Start Recording";
         body.classList.remove("no-pointer-events");
     }
 }
 
 const SubmitVideo = async () => {
+    const body = document.getElementById("main-body");
+    const submit = document.getElementById("submit");
+
+    submit.innerHTML = '<i class="fa fa-spinner fa-spin"></i>'
+    body.classList.add("no-pointer-events");
+
     try{
         if(!videoBlob){
             alert("Video Not Found!!!!");
@@ -142,7 +152,15 @@ const SubmitVideo = async () => {
         )
         if(response.status < 300){
             const answer = document.getElementById("answer");
-            answer.innerText = response.data.result;
+            const selectedButton = document.querySelector('.selected-button');
+            const result = response.data.result;
+            if(selectedButton.textContent.toUpperCase() == String(result).toUpperCase()){
+                answer.style.backgroundColor = "green"
+                answer.innerText = `Correct Answer: ${result}`;
+            } else {
+                answer.style.backgroundColor = "red"
+                answer.innerText = `Incorrect Answer: ${result}`
+            }
         } else {
             alert("Internal Error!!!");
             return;
@@ -151,6 +169,9 @@ const SubmitVideo = async () => {
         alert("An error occured!!!");
         console.log(err);
     }
+
+    submit.innerHTML = 'Submit Video'
+    body.classList.remove("no-pointer-events");
 }
 
 const ResetPracticePageAccess = () => {
